@@ -39,7 +39,7 @@ $(document).ready(function (){
   });
   
 });
-// FORCAST API (weatherapi.com)
+// FORCAST API (openweather.org)
 // $(".card-body2").append("<h1>"+c+" "+"</h1>");
 
 $(document).ready(function (){
@@ -48,9 +48,9 @@ $(document).ready(function (){
     var city = $("input[name=cityName]").val();
     console.log(city);
 
-var APIKey = "14f6dd8905954cf4bfa14347201811";
-var queryURL="http://api.weatherapi.com/v1/forecast.json?key="
-+APIKey+"&q="+city+"&days=4";
+var APIKey = "a0ed00a1e03e86452a0e4c5419b896b8";
+var queryURL="https://api.openweathermap.org/data/2.5/forecast?q="
++city+ "&units=imperial&appid=" + APIKey;
 
 
 
@@ -66,12 +66,12 @@ $.ajax({
   console.log(queryURL);
   console.log(response);
   // VAR that holds my icon pic
-  var imageURL=response.forecast.forecastday[0].day.condition.icon
+  var imageURL=response.list[0].weather[0].icon
   console.log(imageURL);
  
   var cardBodyContainer=$(".card-bodyTwo");
   //VAR that APPENDS the Image ICON to .card-body2
-  var dayOneEl=$("<img>").attr("src","http://"+imageURL);
+  var dayOneEl=$("<img>").attr("src","http://openweathermap.org/img/wn/"+imageURL+"@2x.png");
   cardBodyContainer.append(dayOneEl);
     });
   });
