@@ -1,12 +1,7 @@
 
 //location input
-// have a submit button to select city
-// var myForm=document.getElementById(myForm);
-// var city=("#cityInput.text");
-// document.getElementById("#cityInput").addEventListener("click",);
-// $("#location").on("click", (function(event) {
-//     console.log(city);
-//     event.preventDefault();
+// have a SUBMIT BUTTON to select CITY
+
 var city="city";
 $(document).ready(function (){
   $("#subButton").click(function(event){
@@ -30,7 +25,7 @@ $(document).ready(function (){
 
       console.log(queryURL)
       console.log(response)
-      var tempF=(response.main.temp-273.15)* 1.80 + 32;
+      // var tempF=(response.main.temp-273.15)* 1.80 + 32;
 
       $(".card-body").prepend("<h1>"+response.name +" "+ "Weather Details</h1>");
       
@@ -40,30 +35,47 @@ $(document).ready(function (){
 
       $(".cardInfo").prepend("<li>Wind speed:"+" "+response.wind.speed.toFixed(0)+"</li>");
       
-    var APIKey = "14f6dd8905954cf4bfa14347201811";
-    var queryURL4="http://api.weatherapi.com/v1/forecast.json?key="
-    +APIKey+"&q="+city+"&days=4";
-
+    });
+  });
   
+});
+// FORCAST API (weatherapi.com)
+// $(".card-body2").append("<h1>"+c+" "+"</h1>");
+
+$(document).ready(function (){
+  $("#subButton").click(function(event){
+    event.preventDefault();
+    var city = $("input[name=cityName]").val();
+    console.log(city);
+
+var APIKey = "14f6dd8905954cf4bfa14347201811";
+var queryURL="http://api.weatherapi.com/v1/forecast.json?key="
++APIKey+"&q="+city+"&days=4";
 
 
-    $.ajax({
 
-      url: queryURL4,
 
-      method: "GET"
-    })
-    .then(function(response) {
+$.ajax({
 
-      console.log(queryURL)
-      console.log(response)
-      $(".card-body2").prepend("<h1>"+response.forecast.forecastday[0]+" "+"</h1>");
+  url: queryURL,
+
+  method: "GET"
+})
+.then(function(response) {
+
+  console.log(queryURL);
+  console.log(response);
+  // VAR that holds my icon pic
+  var imageURL=response.forecast.forecastday[0].day.condition.icon
+  console.log(imageURL);
+ 
+  var cardBodyContainer=$(".card-bodyTwo");
+  //VAR that APPENDS the Image ICON to .card-body2
+  var dayOneEl=$("<img>").attr("src","http://"+imageURL);
+  cardBodyContainer.append(dayOneEl);
     });
-    });
-
   });
 });
-
 
 
   //               //  var tempF=(response.main.temp-273.15)* 1.80 + 32;
@@ -71,11 +83,11 @@ $(document).ready(function (){
 
   //               // $(".#").html("<h1>"+response.name +" "+ "Weather Details</h1>");
 
-                $(".#").text("Temperature:"+" "+tempF.toFixed(0));
+                // $(".#").text("Temperature:"+" "+tempF.toFixed(0));
 
-                $(".#").text("Humitidty:"+" "+response.main.humidity);
+                // $(".#").text("Humitidty:"+" "+response.main.humidity);
 
-                $(".#").text("Wind speed:"+" "+response.wind.speed.toFixed(0));
+                // $(".#").text("Wind speed:"+" "+response.wind.speed.toFixed(0));
     
   //     });
     
