@@ -3,16 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script rel="javascript" src="./script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script rel="style" src="style.css"></script>
 </head>
 <body>
     <div class="top-bar-right">
-        <ul class="menu">
-          <li><input id="cityInput" type ="search" placeholder="Enter City Name"></li>
-          <li><button type="button" class="button">Search</button></li>
-        </ul>
+      
+          <form id="myForm">
+          <input type ="text" name="cityName" placeholder="Enter City Name">
+          <button id="subButton" type="submit" class="btn btn-primary">Search</button>
+          <!-- <button id="button" class="btn btn-primary">Primary</button> -->
+          </form>
+        
       </div>
-    </div>
+      <!-- LIST orderd of serched cities-->
+        <div class="card" style="width:30%;float: left;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+        </div>
+
+      <!-- Card of current city -->
+      <div class="card"style="float:right;width:70%;">
+        <div class="card-body">
+          This is some text within a card body.
+        </div>
+      </div>
+
+    
+      <!-- 4 day forecast -->
+      <div class="card">
+        <div class="card-body">
+          This is some text within a card body.
+        </div>
 </body>
 </html>
