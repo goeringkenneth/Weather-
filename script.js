@@ -27,13 +27,11 @@ $(document).ready(function (){
       console.log(response)
       // var tempF=(response.main.temp-273.15)* 1.80 + 32;
 
-      $(".card-body").prepend("<h1>"+response.name +" "+ "Weather Details</h1>");
-      
-      $(".cardInfo").append("<li>Temperature:"+" " +response.main.temp.toFixed(0)+"</li>");
- 
+      $(".card-body").prepend("<h1>"+response.name+"<h1>");
+      $(".cardInfo").prepend("<li>Temperature:"+" " +response.main.temp.toFixed(0)+"</li>");
+      $(".cardInfo").append("<li>Wind speed:"+" "+response.wind.speed.toFixed(0)+"</li>");
       $(".cardInfo").append("<li>Humidity:"+" "+response.main.humidity+"</li>");
 
-      $(".cardInfo").prepend("<li>Wind speed:"+" "+response.wind.speed.toFixed(0)+"</li>");
       
     });
   });
@@ -72,7 +70,7 @@ $.ajax({
   var cardBodyContainer=$(".card-bodyTwo");
   //VAR that APPENDS the Image ICON to .card-body2
   var dayOneEl=$("<img>").attr("src","http://openweathermap.org/img/wn/"+imageURL+"@2x.png");
-  cardBodyContainer.append(dayOneEl);
+  cardBodyContainer.prepend(dayOneEl);
     });
   });
 });
