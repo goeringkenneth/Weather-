@@ -1,5 +1,11 @@
-.card{
-    border: 1px solid #ccc;
+ .card{
+    border: 3px solid rgb(3, 2, 2);
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 10px;
+} 
+.weather{
+    border: 3px solid rgb(3, 0, 0);
     background-color: #f4f4f4;
     padding: 20px;
     margin-bottom: 10px;

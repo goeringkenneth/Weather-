@@ -30,6 +30,15 @@ $(document).ready(function (){
 
       console.log(queryURL)
       console.log(response)
+      var tempF=(response.main.temp-273.15)* 1.80 + 32;
+
+      $(".card-body").prepend("<h1>"+response.name +" "+ "Weather Details</h1>");
+      
+      $(".card-body").append("<p>Temperature:"+" " +response.main.temp.toFixed(0)+"</p>");
+ 
+      $(".card-body").append("<p>Humidity:"+" "+response.main.humidity+"</p>");
+
+      $(".card-body").prepend("<p>Wind speed:"+" "+response.wind.speed.toFixed(0)+"</p>");
       
     var APIKey = "14f6dd8905954cf4bfa14347201811";
     var queryURL4="http://api.weatherapi.com/v1/forecast.json?key="
@@ -48,6 +57,7 @@ $(document).ready(function (){
 
       console.log(queryURL)
       console.log(response)
+      $(".card-body2").prepend("<h1>"+response.forecast.forecastday[0]+" "+"</h1>");
     });
     });
 
@@ -61,11 +71,11 @@ $(document).ready(function (){
 
   //               // $(".#").html("<h1>"+response.name +" "+ "Weather Details</h1>");
 
-  //               // $(".#").text("Temperature:"+" "+tempF.toFixed(0));
+                $(".#").text("Temperature:"+" "+tempF.toFixed(0));
 
-  //               // $(".#").text("Humitidty:"+" "+response.main.humidity);
+                $(".#").text("Humitidty:"+" "+response.main.humidity);
 
-  //               // $(".#").text("Wind speed:"+" "+response.wind.speed.toFixed(0));
+                $(".#").text("Wind speed:"+" "+response.wind.speed.toFixed(0));
     
   //     });
     
