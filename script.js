@@ -64,12 +64,19 @@ $.ajax({
   console.log(queryURL);
   console.log(response);
   // VAR that holds my icon pic
-  var imageURL=response.list[0].weather[0].icon
+  // for lop for the days
+  var list=[0,1,2,3];
+  for (var i = 0; i < list.length; i++) {
+    
+    console.log(list[i])
+  }
+  var imageURL=response.list[i].weather[0].icon
   console.log(imageURL);
  
   var cardBodyContainer=$(".card-bodyTwo");
   //VAR that APPENDS the Image ICON to .card-body2
   var dayOneEl=$("<img>").attr("src","http://openweathermap.org/img/wn/"+imageURL+"@2x.png");
+  
   cardBodyContainer.prepend(dayOneEl);
     });
   });
