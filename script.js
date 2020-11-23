@@ -65,23 +65,39 @@ $.ajax({
   console.log(response);
   // VAR that holds my icon pic
   // for lop for the days
-  var list=[0,1,2,3];
-  for (var i = 0; i < list.length; i++) {
-    
-    console.log(list[i])
-  }
-  var imageURL=response.list[i].weather[0].icon
-  console.log(imageURL);
+  // var list=[0,1,2,3,4];
+  // for (var i = 0; i < list.length; i++) {
+  //   var list=list.length
+  //   console.log([i])
+  // };
+
+  var one=response.list[0].weather[0].icon;
+  var two=response.list[1].weather[0].icon;
+  var three=response.list[2].weather[0].icon;
+  var four=response.list[3].weather[0].icon;
+  var five=response.list[4].weather[0].icon;
+  console.log(one,two,three,four,five);
  
   var cardBodyContainer=$(".card-bodyTwo");
   //VAR that APPENDS the Image ICON to .card-body2
-  var dayOneEl=$("<img>").attr("src","http://openweathermap.org/img/wn/"+imageURL+"@2x.png");
+  var dayOneEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+one+"@2x.png");
+  var dayTwoEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+two+"@2x.png");
+  var dayThreeEl=$("<img>"+"<div class=forecast >").attr("src","http://openweathermap.org/img/wn/"+three+"@2x.png");
+  var dayFourEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+four+"@2x.png");
+  var dayFiveEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+five+"@2x.png");
+
+  cardBodyContainer.append(dayOneEl);
   
-  cardBodyContainer.prepend(dayOneEl);
+  cardBodyContainer.append(dayTwoEl);
+  
+  cardBodyContainer.append(dayThreeEl);
+  
+  cardBodyContainer.append(dayFourEl);
+  
+  cardBodyContainer.append(dayFiveEl);
     });
   });
 });
-
 
   //               //  var tempF=(response.main.temp-273.15)* 1.80 + 32;
 
@@ -95,9 +111,6 @@ $.ajax({
                 // $(".#").text("Wind speed:"+" "+response.wind.speed.toFixed(0));
     
   //     });
-    
-  // }));
-  
 
   
   

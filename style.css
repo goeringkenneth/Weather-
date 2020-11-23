@@ -1,12 +1,16 @@
- .card{
-    border: 3px solid rgb(3, 2, 2);
+ $.card{
+    border: 10px solid rgb(3, 2, 2);
     background-color: #f4f4f4;
     padding: 20px;
     margin-bottom: 10px;
-} 
-.weather{
-    border: 3px solid rgb(3, 0, 0);
+} ;
+/* .weather{
+    border: 30px solid rgb(3, 0, 0);
     background-color: #f4f4f4;
     padding: 20px;
     margin-bottom: 10px;
+}; */
+
+.forecast{
+float:left
 };
