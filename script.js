@@ -69,35 +69,43 @@ $.ajax({
   // for (var i = 0; i < list.length; i++) {
   //   var list=list.length
   //   console.log([i])
-  // };
 
-  var one=response.list[0].weather[0].icon;
-  var two=response.list[1].weather[0].icon;
-  var three=response.list[2].weather[0].icon;
-  var four=response.list[3].weather[0].icon;
-  var five=response.list[4].weather[0].icon;
-  console.log(one,two,three,four,five);
- 
-  var cardBodyContainer=$(".card-bodyTwo");
-  //VAR that APPENDS the Image ICON to .card-body2
-  var dayOneEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+one+"@2x.png");
-  var dayTwoEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+two+"@2x.png");
-  var dayThreeEl=$("<img>"+"<div class=forecast >").attr("src","http://openweathermap.org/img/wn/"+three+"@2x.png");
-  var dayFourEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+four+"@2x.png");
-  var dayFiveEl=$("<img>"+"<div class=forecast>").attr("src","http://openweathermap.org/img/wn/"+five+"@2x.png");
-
-  cardBodyContainer.append(dayOneEl);
-  
-  cardBodyContainer.append(dayTwoEl);
-  
-  cardBodyContainer.append(dayThreeEl);
-  
-  cardBodyContainer.append(dayFourEl);
-  
-  cardBodyContainer.append(dayFiveEl);
+function day(a){
+ var dayEL=response.list[a].weather[0].icon;
+return dayEL;
+      }
+      console.log(day(0));
+      console.log(day(1));
+      console.log(day(2));
+      console.log(day(3));
+      console.log(day(4));
     });
   });
 });
+
+
+// APPEND Forcast cards.
+function forecast(a){
+var iconEl=$("."+a).append(day(0));
+return iconEl
+}
+forecast(dayOne).apepend("day(0)");
+
+
+
+// $(".card-body").prepend("<h1>"+response.name+"<h1>");
+
+  // $(".dayOne").append(dayOneEl)
+  // ;
+  // $(".dayTwo").append(dayTwoEl);
+  //  $(".dayThree").append(dayThreeEl);
+  
+  // $(".dayFour./card-text").append(dayFourEl);
+  
+  // $(".dayFive./card-text").append(dayFiveEl);
+//     });
+//   });
+// });
 
   //               //  var tempF=(response.main.temp-273.15)* 1.80 + 32;
 

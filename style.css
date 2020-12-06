@@ -1,16 +1,19 @@
- $.card{
-    border: 10px solid rgb(3, 2, 2);
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin-bottom: 10px;
-} ;
-/* .weather{
-    border: 30px solid rgb(3, 0, 0);
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin-bottom: 10px;
-}; */
 
-.forecast{
-float:left
+ .card-text{
+    border: 10px solid rgb(3, 2, 2);
+    border-radius: 10%;
+    background-color: lightblue;
+    padding: 20px;
+    margin: 10px;
+    
+} 
+.weather{
+    border: 10px solid rgb(3, 0, 0);
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 10px;
 };
+
+/* .forecast{
+float:left
+} */
