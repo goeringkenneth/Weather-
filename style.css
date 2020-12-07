@@ -11,13 +11,14 @@
     background-color: lightblue;
     padding: 20px;
     margin: 10px;
-    width:17%;
+    width:17%
     /* display: flex;
     justify-content: space-around;
     flex-direction: row; */
  }
  #uvi.low{
      background-color: rgb(147, 231, 147);
+     width:8%;
  }
  #uvi.med{
     background-color:rgb(241, 241, 113);
