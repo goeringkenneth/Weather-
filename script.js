@@ -49,22 +49,25 @@ $.ajax({
 .then(function(response) {
   console.log(response);
   var uvi="<li id=uvi>UVI:"+" "+response.current.uvi+"</li>"
-  var uviEl=response.current.uvi
-  console.log(uviEl)
+
   $(".cardInfo").append(uvi);
-  if (uviEl<=2) {
-    ?.style.backgroundColor="green";
+  var x=document.querySelector("#uvi");
+  uviEl=response.current.uvi
+  console.log(uviEl)
+console.log(x);
+if (uviEl<=2) {
+    x.classList.add("low")
+   if (uviEl>=3) {
+    x.classList.add("med")
+   };
+   if (uviEl>=6) {
+    x.classList.add("high")
+   };
+   if (uviEl>=8) {
+    x.classList.add("veryHigh")
+   };
   };
-    if (uviEl>=3) {
-      ?.style.backgroundColor="yellow";
-    }
-    if (uviEl>=6) {
-      ?.style.backgroundColor="orange";
-    }
-    if (uviEl>=8) {
-      ?.style.backgroundColor="red";
-    }
-    
+
     
   
 });
@@ -135,4 +138,7 @@ dayFive()
 
 });
 
+
+
+   
 

@@ -15,9 +15,21 @@
     /* display: flex;
     justify-content: space-around;
     flex-direction: row; */
- 
+ }
+ #uvi.low{
+     background-color: rgb(147, 231, 147);
+ }
+ #uvi.med{
+    background-color:rgb(241, 241, 113);
+}
+#uvi.high{
+    background-color:rgb(241, 198, 116);
+}
+#uvi.veryHigh{
+    background-color: rgb(236, 100, 100);
+}
     
-} 
+
 img{
     position: auto;
 
