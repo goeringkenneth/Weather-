@@ -5,7 +5,24 @@
 $(document).ready(function (){
   $("#subButton").click(function(event){
     event.preventDefault();
+   
+    // event.clear input
     var city = $("input[name=cityName]").val();
+    var key="city"
+    function localIn() {
+      localStorage.setItem("city", $("input[name=cityName]").val()); 
+    }
+    localIn();
+    function localOut(){
+
+      localStorage.getItem("city");
+      $(".list-group").append(`<li class="list-group-item">${city}</li>`)
+    // console.log();
+    
+    
+    }
+    localOut(city);
+
 // current Day
     var APIKey = "a0ed00a1e03e86452a0e4c5419b896b8";
     var queryURL="https://api.openweathermap.org/data/2.5/weather?q="
@@ -55,7 +72,7 @@ $.ajax({
   uviEl=response.current.uvi
   console.log(uviEl)
 console.log(x);
-if (uviEl<=2) {
+if (uviEl<=3) {
     x.classList.add("low")
    if (uviEl>=3) {
     x.classList.add("med")
@@ -129,6 +146,7 @@ function dayFive(){
   
   $(".cardFive").text(`Temp: ${temp.toFixed(0)}℉`);
   $(".cardFive").append(iconImg)
+  
 };
 dayFive()
   
@@ -137,6 +155,9 @@ dayFive()
  
 
 });
+
+// local storage
+
 
 
 
