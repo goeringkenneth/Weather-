@@ -36,7 +36,7 @@ $(document).ready(function(){
     .then(function(response) {
 
       $(".cardBody").prepend("<h1>"+response.name+"<h1>");
-      $(".cardInfo").append("<li>Temperature:"+" " +response.main.temp.toFixed(0)+"</li>");
+      $(".cardInfo").append("<li>Temperature:"+" " +response.main.temp.toFixed(0)+"℉"+"</li>");
       $(".cardInfo").append("<li>Wind speed:"+" "+response.wind.speed.toFixed(0)+"</li>");
       $(".cardInfo").append("<li>Humidity:"+" "+response.main.humidity+"</li>");
     });
@@ -70,23 +70,25 @@ $.ajax({
   var x=document.querySelector("#uvi");
   uviEl=response.current.uvi
   console.log(uviEl)
-console.log(x);
+
 if (uviEl<=3) {
     x.classList.add("low")
-   if (uviEl>=3) {
+  }
+   
+    else if (uviEl>=3) {
     x.classList.add("med")
-   };
-   if (uviEl>=6) {
+   }
+   else if (uviEl>=6) {
     x.classList.add("high")
-   };
-   if (uviEl>=8) {
+   }
+   else if (uviEl>=8) {
     x.classList.add("veryHigh")
    };
-  };
-
-    
+  });
   
-});
+
+
+
 
 function dayOne(){
   var imageURL=response.list[0].weather[0].icon;
@@ -154,6 +156,7 @@ dayFive()
   });
   
 });
+
 
 
 
