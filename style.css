@@ -1,7 +1,20 @@
-/* .forecast{
+.current{
+    float:right;
+    width:70%;
+    height:70%;
+}
+.history{
+    width:30%;
+    float: left;
+}
+
+.forecast{ 
+    float:right;
+    width:60vw;
+    height:30%;
     display: flex;
-    justify-content: space-around;
-    flex-direction: column; */
+    flex-direction: row;
+}
 
 
 
@@ -15,6 +28,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    float:right;
  }
  #uvi.low{
      background-color: rgb(147, 231, 147);
@@ -40,17 +54,65 @@ img{
     background-color: #f4f4f4;
     padding: 20px;
     margin-bottom: 10px;
-};
+}
 
 
-@media only screen and (min-width: 400px) {
+    
+@media screen and (max-width: 850px) {
+    .day{
+        width:20vw;
+        height:20vh;
+        display: flex;
+        justify-content: left;
+        /* align-items: left; */
+    }
     .forecast{
+        
+    
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-content: center;
+        justify-content: left;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .forecast{
+        
+    
         display: flex;
         justify-content: space-around;
         flex-direction: column;
-        
+        align-content: center;
+        align-items: left;
     }
-    
-     
-};
+    .day{
+        width:40vw;
+        height:20vh;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+    }
+    #uvi.low{
+        background-color: rgb(147, 231, 147);
+        width:30vw;
+    }
+    #uvi.med{
+       background-color:rgb(241, 241, 113);
+       width:30vw;
+   }
+   #uvi.high{
+       background-color:rgb(241, 198, 116);
+       width:30vw;
+   }
+   #uvi.veryHigh{
+       background-color: rgb(236, 100, 100);
+       width:30vw;
+   }
+}
+
+
     

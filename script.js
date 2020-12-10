@@ -2,13 +2,12 @@
 //location input
 // have a SUBMIT BUTTON to select CITY
 
-$(document).ready(function (){
+$(document).ready(function(){
   $("#subButton").click(function(event){
     event.preventDefault();
-   
-    // event.clear input
+    
+   //local storage
     var city = $("input[name=cityName]").val();
-    var key="city"
     function localIn() {
       localStorage.setItem("city", $("input[name=cityName]").val()); 
     }
@@ -36,8 +35,8 @@ $(document).ready(function (){
     })
     .then(function(response) {
 
-      $(".card-body").prepend("<h1>"+response.name+"<h1>");
-      $(".cardInfo").prepend("<li>Temperature:"+" " +response.main.temp.toFixed(0)+"</li>");
+      $(".cardBody").prepend("<h1>"+response.name+"<h1>");
+      $(".cardInfo").append("<li>Temperature:"+" " +response.main.temp.toFixed(0)+"</li>");
       $(".cardInfo").append("<li>Wind speed:"+" "+response.wind.speed.toFixed(0)+"</li>");
       $(".cardInfo").append("<li>Humidity:"+" "+response.main.humidity+"</li>");
     });
@@ -151,10 +150,12 @@ function dayFive(){
 dayFive()
   
     });
+    
   });
- 
-
+  
 });
+
+
 
 // local storage
 
